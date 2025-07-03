@@ -9,14 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <19 20>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -30,10 +23,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y          &kp U  &kp I      &kp O    &kp P     &kp LBKT
-&mt LCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H          &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N          &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
-                                &kp LGUI  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &kp RALT
+&kp TAB           &kp Q               &kp W           &kp E             &kp R               &kp T        &kp Y          &kp U                &kp I              &kp O            &kp P                   &kp LBKT
+&mt LCTRL ESCAPE  &mt LEFT_CONTROL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LEFT_COMMAND F  &kp G        &kp H          &mt RIGHT_COMMAND J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_CONTROL SEMI  &kp SQT
+&kp LSHFT         &kp Z               &kp X           &kp C             &kp V               &kp B        &kp N          &kp M                &kp COMMA          &kp DOT          &kp FSLH                &kp RBKT
+                                                      &kp LGUI          &mo 6               &kp SPACE    &kp BACKSPACE  &mo 1                &kp ENTER
             >;
         };
 
@@ -46,10 +39,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
+&trans     &trans        &trans        &trans        &trans        &trans          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&kp LSHFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &trans    &trans  &trans     &trans  &bt BT_CLR
+                                       &trans        &trans        &trans          &trans    &trans    &trans
             >;
         };
 
@@ -74,5 +67,15 @@
         extra_2 { status = "reserved"; };
 
         extra_3 { status = "reserved"; };
+
+        raise_v2 {
+            display-name = "Raise";
+            bindings = <
+&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp EXCL         &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp BSPC
+&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS        &kp UNDER     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp KP_MULTIPLY  &kp PLUS      &kp LBRC              &kp RBRC               &kp PIPE  &kp TILDE
+                             &trans    &trans    &trans       &trans           &trans        &trans
+            >;
+        };
     };
 };

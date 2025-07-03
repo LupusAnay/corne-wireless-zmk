@@ -26,7 +26,7 @@
 &kp TAB           &kp Q               &kp W           &kp E             &kp R               &kp T        &kp Y          &kp U                &kp I              &kp O            &kp P                   &kp LBKT
 &mt LCTRL ESCAPE  &mt LEFT_CONTROL A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LEFT_COMMAND F  &kp G        &kp H          &mt RIGHT_COMMAND J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_CONTROL SEMI  &kp SQT
 &kp LSHFT         &kp Z               &kp X           &kp C             &kp V               &kp B        &kp N          &kp M                &kp COMMA          &kp DOT          &kp FSLH                &kp RBKT
-                                                      &kp LGUI          &mo 6               &kp SPACE    &kp BACKSPACE  &mo 1                &kp ENTER
+                                                      &kp LGUI          &mo 3               &kp SPACE    &kp BACKSPACE  &mo 1                &kp ENTER
             >;
         };
 
@@ -62,12 +62,6 @@
             >;
         };
 
-        extra_1 { status = "reserved"; };
-
-        extra_2 { status = "reserved"; };
-
-        extra_3 { status = "reserved"; };
-
         raise_v2 {
             display-name = "Raise";
             bindings = <
@@ -75,6 +69,15 @@
 &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS        &kp UNDER     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp KP_MULTIPLY  &kp PLUS      &kp LBRC              &kp RBRC               &kp PIPE  &kp TILDE
                              &trans    &trans    &trans       &trans           &trans        &trans
+            >;
+        };
+
+        fun {
+            bindings = <
+&trans  &trans  &trans          &trans            &trans      &trans    &trans  &trans           &trans  &trans  &trans  &trans
+&trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans    &trans  &kp PRINTSCREEN  &trans  &trans  &trans  &trans
+&trans  &trans  &trans          &trans            &trans      &trans    &trans  &trans           &trans  &trans  &trans  &trans
+                                &trans            &trans      &trans    &trans  &trans           &trans
             >;
         };
     };

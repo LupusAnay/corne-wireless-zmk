@@ -16,7 +16,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <140>;
             flavor = "balanced";
@@ -32,7 +32,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <180>;
             require-prior-idle-ms = <140>;
             quick-tap-ms = <175>;
             flavor = "balanced";
@@ -95,10 +95,10 @@
         raise_v2 {
             display-name = "Raise";
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp EXCL         &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS        &kp UNDER     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp KP_MULTIPLY  &kp PLUS      &kp LBRC              &kp RBRC               &kp PIPE  &kp TILDE
-                             &trans    &trans    &trans       &trans           &trans        &trans
+&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR      &kp PRCNT    &kp EXCL         &kp QUESTION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp BSPC
+&kp LCTRL  &trans    &trans  &trans    &kp KP_EQUAL  &trans       &kp MINUS        &kp UNDER     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans    &trans        &trans       &kp KP_MULTIPLY  &kp PLUS      &kp LBRC              &kp RBRC               &kp PIPE  &kp TILDE
+                             &trans    &trans        &trans       &trans           &trans        &trans
             >;
         };
 

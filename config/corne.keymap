@@ -16,7 +16,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <170>;
             flavor = "balanced";
@@ -32,7 +32,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
+            tapping-term-ms = <280>;
             require-prior-idle-ms = <170>;
             quick-tap-ms = <175>;
             flavor = "balanced";

@@ -121,10 +121,10 @@
         ru_raise_layer {
             display-name = "RU Raise";
             bindings = <
-&kp TAB     &kp EXCL    &kp N2      &kp N3      &kp N4     &kp N5       &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LS(N4)  &kp LS(N6)  &kp SEMI    &kp LS(N2)  &kp GRAVE  &kp TILDE    &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT  &kp LBRC  &kp RBRC
-&kp COMMA   &kp DOT     &kp LS(N7)  &kp FSLH    &kp LT     &kp GT       &kp UNDER  &kp PLUS   &kp PIPE      &kp BSLH  &trans    &trans
-                                    &trans      &trans     &trans       &trans     &trans     &trans
+&kp TAB        &kp EXCL    &kp RA(LS(N2))  &kp N3             &kp N4     &kp N5       &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LS(N4)     &kp LS(N6)  &kp SEMI        &kp LS(N2)         &kp GRAVE  &kp TILDE    &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT  &kp LBRC  &kp RBRC
+&kp LS(SLASH)  &kp SLASH   &kp LS(N7)      &kp LS(BACKSLASH)  &kp LT     &kp GT       &kp UNDER  &kp PLUS   &kp PIPE      &kp BSLH  &trans    &trans
+                                           &trans             &trans     &trans       &trans     &trans     &trans
             >;
         };
 

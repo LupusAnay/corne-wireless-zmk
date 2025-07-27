@@ -112,10 +112,10 @@
 
         cs {
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5      &trans  &trans  &trans  &trans  &trans  &trans
-&kp TAB    &kp T   &kp Q   &kp W     &kp E     &kp R       &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp B   &kp A   &kp S     &kp D     &kp F       &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp LALT  &kp LEFT  &kp BSPC    &trans  &trans  &trans
+&kp ESC  &kp N1     &kp N2  &kp N3  &kp N4     &kp N5       &trans  &trans  &trans  &trans  &trans  &trans
+&kp G    &kp TAB    &kp Q   &kp W   &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&kp B    &kp LCTRL  &kp A   &kp S   &kp D      &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+                            &kp F   &kp LSHFT  &kp SPACE    &trans  &trans  &trans
             >;
         };
 

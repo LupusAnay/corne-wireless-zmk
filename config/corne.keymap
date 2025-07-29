@@ -120,9 +120,9 @@
         cs {
             bindings = <
 &trans  &kp N1     &kp N3  &kp W   &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SPACE  &kp A   &kp S   &kp D      &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp SPACE  &kp A   &kp S   &kp D      &kp N4       &trans  &trans  &trans  &trans  &trans  &trans
 &kp B   &kp N2     &kp N5  &trans  &trans     &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp N4  &kp LCTRL  &kp LSHFT    &trans  &trans  &trans
+                           &kp F   &kp LCTRL  &kp LSHFT    &trans  &trans  &trans
             >;
         };
 

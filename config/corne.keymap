@@ -62,6 +62,12 @@
             tapping-term-ms = <200>;
             bindings = <&tog>, <&lang_switch_win>;
         };
+
+        toggle_on: toggle_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOGGLE_ON";
+            #binding-cells = <1>;
+        };
     };
 
     macros {
@@ -69,20 +75,20 @@
             compatible = "zmk,behavior-macro";
             label = "LG_TAP";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &tog 6>;
+            bindings = <&kp LGUI &tog 5>;
         };
 
         lang_switch_win: lang_switch_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT) &tog 6>;
+            bindings = <&kp LA(LEFT_SHIFT) &tog 5>;
             label = "LANG_SWITCH_WIN";
         };
 
         sw_profile: sw_profile {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
-            bindings = <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER &macro_param_2to1 &tog MACRO_PLACEHOLDER>;
+            bindings = <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER &macro_param_2to1 &toggle_on MACRO_PLACEHOLDER>;
             label = "SW_PROFILE";
         };
 
@@ -104,7 +110,7 @@
 &kp TAB     &kp Q                &kp W            &kp E              &kp R                &kp T        &kp Y          &kp U                 &kp I               &kp O             &kp P                    &kp LBKT
 &kp ESCAPE  &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_SHIFT D  &hml LEFT_COMMAND F  &kp G        &kp H          &hmr RIGHT_COMMAND J  &hmr RIGHT_SHIFT K  &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL SEMI  &kp SQT
 &kp LSHFT   &kp Z                &kp X            &kp C              &kp V                &kp B        &kp N          &kp M                 &kp COMMA           &kp DOT           &kp FSLH                 &kp RBKT
-                                                  &lgui_sw 6 0       &mo 4                &kp SPACE    &kp BACKSPACE  &lt 3 RC(SPACE)       &kp ENTER
+                                                  &lgui_sw 5 0       &mo 3                &kp SPACE    &kp BACKSPACE  &lt 2 RC(SPACE)       &kp ENTER
             >;
         };
 
@@ -113,16 +119,7 @@
 &trans  &trans           &trans  &trans            &trans        &trans    &trans  &trans        &trans  &trans  &trans                    &trans
 &trans  &hml LEFT_WIN A  &trans  &trans            &hml LCTRL F  &trans    &trans  &hmr RCTRL J  &trans  &trans  &hmr RIGHT_WIN SEMICOLON  &trans
 &trans  &trans           &trans  &trans            &trans        &trans    &trans  &trans        &trans  &trans  &trans                    &trans
-                                 &altshift_sw 6 0  &trans        &trans    &trans  &trans        &trans
-            >;
-        };
-
-        cs {
-            bindings = <
-&trans  &kp N1     &kp N3  &kp W   &kp E      &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SPACE  &kp A   &kp S   &kp D      &kp N4       &trans  &trans  &trans  &trans  &trans  &trans
-&kp B   &kp N2     &kp N5  &trans  &trans     &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp F   &kp LCTRL  &kp LSHFT    &trans  &trans  &trans
+                                 &altshift_sw 5 0  &trans        &trans    &trans  &trans        &trans
             >;
         };
 
@@ -137,7 +134,7 @@
             bindings = <
 &kp TAB    &kp N1           &kp N2           &kp N3            &kp N4           &kp N5             &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
 &trans     &trans           &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp C_NEXT       &kp PRINTSCREEN    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&kp LSHFT  &sw_profile 0 0  &sw_profile 1 0  &sw_profile 2 0   &sw_profile 3 1  &sw_profile 4 1    &tog 7    &tog 1    &trans  &trans     &trans  &bt BT_CLR
+&kp LSHFT  &sw_profile 0 0  &sw_profile 1 0  &sw_profile 2 0   &sw_profile 3 1  &sw_profile 4 1    &tog 6    &tog 1    &trans  &trans     &trans  &bt BT_CLR
                                              &trans            &trans           &trans             &trans    &trans    &trans
             >;
         };
@@ -174,7 +171,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &mo 5   &trans    &trans  &trans  &trans
+                        &trans  &mo 4   &trans    &trans  &trans  &trans
             >;
         };
 

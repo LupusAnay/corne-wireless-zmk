@@ -178,5 +178,23 @@
                             &kp N5  &kp N4  &kp SPACE    &trans  &trans  &trans
             >;
         };
+
+        fps {
+            bindings = <
+&kp ESC     &kp Q  &kp W  &kp E     &kp R  &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &kp Z  &kp X  &kp C     &kp V  &kp B        &trans  &trans  &trans  &trans  &trans  &trans
+                          &kp LALT  &mo 9  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        fps_numbers {
+            bindings = <
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans    &trans  &trans  &trans
+            >;
+        };
     };
 };

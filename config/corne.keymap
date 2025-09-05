@@ -192,7 +192,7 @@
             bindings = <
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5    &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans        &trans        &trans    &trans  &trans  &trans
             >;
         };

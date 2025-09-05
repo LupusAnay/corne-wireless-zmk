@@ -120,7 +120,7 @@
             bindings = <
 &kp TAB    &kp N1           &kp N2           &kp N3            &kp N4           &kp N5             &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &kp BSPC
 &trans     &trans           &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp C_NEXT       &kp PRINTSCREEN    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &bt BT_CLR_ALL
-&kp LSHFT  &sw_profile 0 0  &sw_profile 1 0  &sw_profile 2 0   &sw_profile 3 1  &sw_profile 4 1    &tog 0    &tog 1    &trans  &tog 7     &tog 6  &bt BT_CLR
+&kp LSHFT  &sw_profile 0 0  &sw_profile 1 0  &sw_profile 2 0   &sw_profile 3 1  &sw_profile 4 1    &tog 0    &tog 1    &tog 8  &tog 7     &tog 6  &bt BT_CLR
                                              &trans            &trans           &trans             &trans    &trans    &trans
             >;
         };

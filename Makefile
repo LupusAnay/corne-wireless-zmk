@@ -10,8 +10,8 @@ build:
 	@echo "🔨 Building firmware..."
 	@mkdir -p build
 	@docker run --rm -v "$$(pwd)/config:/app/config" -v "$$(pwd)/build:/app/build" corne-zmk sh -c " \
-		west build -s zmk/app -d build/left -b nice_nano_v2 -- -DSHIELD=corne_left -DZMK_CONFIG=/app/config && \
-		west build -s zmk/app -d build/right -b nice_nano_v2 -- -DSHIELD=corne_right -DZMK_CONFIG=/app/config \
+		west build -s zmk/app -d build/left -b nice_nano -- -DSHIELD=corne_left -DZMK_CONFIG=/app/config && \
+		west build -s zmk/app -d build/right -b nice_nano -- -DSHIELD=corne_right -DZMK_CONFIG=/app/config \
 	"
 	@echo "✅ Build complete!"
 
@@ -19,14 +19,14 @@ build:
 left:
 	@echo "🔨 Building LEFT half..."
 	@docker run --rm -it -v "$$(pwd):/app" -w /app zmkfirmware/zmk-build-arm:stable sh -c " \
-		west build -d build/left -b nice_nano_v2 -- -DSHIELD=corne_left -DZMK_CONFIG=/app/config \
+		west build -d build/left -b nice_nano -- -DSHIELD=corne_left -DZMK_CONFIG=/app/config \
 	"
 
 # Build only right half  
 right:
 	@echo "🔨 Building RIGHT half..."
 	@docker run --rm -it -v "$$(pwd):/app" -w /app zmkfirmware/zmk-build-arm:stable sh -c " \
-		west build -d build/right -b nice_nano_v2 -- -DSHIELD=corne_right -DZMK_CONFIG=/app/config \
+		west build -d build/right -b nice_nano -- -DSHIELD=corne_right -DZMK_CONFIG=/app/config \
 	"
 
 # Interactive flash with prompts

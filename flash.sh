@@ -16,28 +16,47 @@ flash_half() {
     
     local TIMEOUT=60
     local COUNT=0
+    local MOUNT_PATH=""
+    
     while [ $COUNT -lt $TIMEOUT ]; do
-        MOUNT_PATH=$(ls /Volumes/ 2>/dev/null | grep -i "nicenano\|rpi\|bootloader\|circuitpy" | head -1)
+        # Check common mount locations on Arch Linux
+        MOUNT_PATH=$(find /media /mnt /run/media/$USER 2>/dev/null \
+            -maxdepth 2 -type d \( \
+            -iname "*nicenano*" -o \
+            -iname "*nrf52*" -o \
+            -iname "*bootloader*" -o \
+            -iname "*circuitpy*" -o \
+            -iname "*rpi*" \
+            \) | head -1)
+        
+        # Also check /dev for the device directly (alternative method)
+        if [ -z "$MOUNT_PATH" ]; then
+            # Check if nRF52840 bootloader device exists
+            if [ -e "/dev/ttyACM0" ] || ls /dev/ttyACM* 1>/dev/null 2>&1; then
+                echo "Found nRF52 device, waiting for mount..."
+            fi
+        fi
+        
         if [ -n "$MOUNT_PATH" ]; then
             echo "Found mounted device: $MOUNT_PATH"
-            # Check if firmware file exists
+            
             if [ ! -f "$FIRMWARE_PATH" ]; then
                 echo "❌ Firmware file not found: $FIRMWARE_PATH"
                 exit 1
             fi
             
-            # Simple copy - macOS often reports errors even when flash succeeds
-            echo "Copying $FIRMWARE_PATH to /Volumes/$MOUNT_PATH"
-            cp "$FIRMWARE_PATH" "/Volumes/$MOUNT_PATH/" 2>/dev/null || true
+            echo "Copying $FIRMWARE_PATH to $MOUNT_PATH"
+            cp "$FIRMWARE_PATH" "$MOUNT_PATH/"
             sync
-            sleep 2
             
-            # Check if device disappeared (successful flash)
-            if [ ! -d "/Volumes/$MOUNT_PATH" ]; then
+            # Verify copy succeeded
+            sleep 2
+            if [ ! -d "$MOUNT_PATH" ] || [ ! -f "$MOUNT_PATH/zmk.uf2" ]; then
                 echo "✅ $HALF half flashed successfully!"
                 break
             else
-                echo "Retrying flash..."
+                echo "Device still mounted, waiting for unmount..."
+                sleep 2
             fi
         else
             echo "Waiting for device to mount... ($COUNT/$TIMEOUT)"
@@ -52,6 +71,11 @@ flash_half() {
     fi
     echo
 }
+
+# Detect user for /run/media path
+if [ -z "$USER" ]; then
+    USER=$(whoami)
+fi
 
 # Flash both halves
 flash_half "LEFT" "build/left/zephyr/zmk.uf2"
